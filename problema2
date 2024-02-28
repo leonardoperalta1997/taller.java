@@ -1,0 +1,30 @@
+public class Main {
+    public static void main(String[] args) {
+        String telefono1 = "(507)999-9999";
+        String telefono2 = "(507)6666-6666";
+
+        // Eliminamos los paréntesis y el espacio
+        String numero1 = telefono1.replaceAll("[()\\s-]", "");
+        String numero2 = telefono2.replaceAll("[()\\s-]", "");
+
+        // Extraemos las subcadenas
+        String codigoPais1 = numero1.substring(0, 3);
+        String identificador1 = numero1.substring(3, 6);
+        String identificadorLinea1 = numero1.substring(6);
+
+        String codigoPais2 = numero2.substring(0, 3);
+        String identificador2 = numero2.substring(3, 6);
+        String identificadorLinea2 = numero2.substring(6);
+
+        // Imprimimos los resultados
+        System.out.println("Número 1:");
+        System.out.println("Código de país: " + codigoPais1);
+        System.out.println("Identificador: " + identificador1);
+        System.out.println("Identificador de línea: " + identificadorLinea1);
+
+        System.out.println("\nNúmero 2:");
+        System.out.println("Código de país: " + codigoPais2);
+        System.out.println("Identificador: " + identificador2);
+        System.out.println("Identificador de línea: " + identificadorLinea2);
+    }
+}
