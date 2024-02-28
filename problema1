@@ -1,0 +1,37 @@
+.util.Scanner;
+
+public class Main {
+    public static void main(String[] args) {
+        Scanner scanner = new Scanner(System.in);
+        
+        System.out.println("Ingrese una cadena de caracteres:");
+        String input = scanner.nextLine();
+        
+        int length = input.length();
+        
+        if (length < 5) {
+            System.out.println("La cadena es menor a 5 caracteres.");
+        } else if (length >= 5 && length < 25) {
+            System.out.println("La cadena tiene entre 5 y 25 caracteres.");
+            for (int i = 4; i < length; i += 5) {
+                System.out.println("Caracter en la posición " + i + ": " + input.charAt(i));
+            }
+        } else {
+            System.out.println("La cadena excede los 25 caracteres.");
+            System.out.println("Último valor de la cadena: " + input.charAt(length - 1));
+        }
+        
+        System.out.println("¿Qué parte de la cadena desea obtener o recortar?");
+        String subString = scanner.nextLine();
+        
+        if (input.contains(subString)) {
+            int startIndex = input.indexOf(subString);
+            int endIndex = startIndex + subString.length();
+            System.out.println("Subcadena encontrada: " + input.substring(startIndex, endIndex));
+        } else {
+            System.out.println("La subcadena no se encuentra en la cadena original.");
+        }
+        
+        scanner.close();
+    }
+}
